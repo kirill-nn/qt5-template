@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>MainWindow.qml</file>
+    </qresource>
+
+    <qresource prefix="/icons">
+        <file alias="dashboard.svg">icons/dashboard.svg</file>
+        <file alias="dashboard-fill.svg">icons/dashboard-fill.svg</file>
+        <file alias="chart.svg">icons/chart.svg</file>
+        <file alias="chart-fill.svg">icons/chart-fill.svg</file>
+        <file alias="briefcase.svg">icons/briefcase.svg</file>
+        <file alias="briefcase-fill.svg">icons/briefcase-fill.svg</file>
+        <file alias="gear.svg">icons/gear.svg</file>
+        <file alias="gear-fill.svg">icons/gear-fill.svg</file>
+        <file alias="list.svg">icons/list.svg</file>
+        <file alias="list-fill.svg">icons/list-fill.svg</file>
+    </qresource>
+</RCC>
