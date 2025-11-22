@@ -1,0 +1,28 @@
+name: Build CMake project
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build for Windows x64 MSVC
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up MSVC Developer Command Prompt
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: CMake Configure
+        run: |
+          cmake --preset release
+
+      - name: CMake Build
+        run: |
+          cmake --build build
