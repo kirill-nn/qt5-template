@@ -1,6 +1,9 @@
 name: Build CMake project
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
     branches:
       - master
