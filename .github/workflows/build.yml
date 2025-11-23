@@ -14,15 +14,11 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Cache vcpkg
-        uses: actions/cache@v4
+      - name: Setup vcpkg
+        uses: lukka/run-vcpkg@v11
         with:
-          path: |
-            misc/vcpkg/installed
-            misc/vcpkg/packages
-          key: vcpkg-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('vcpkg.json', '.git/modules/misc/vcpkg/HEAD') }}
-          restore-keys: |
-           vcpkg-${{ runner.os }}-${{ runner.arch }}-
+          vcpkgDirectory: ${{ github.workspace }}/misc/vcpkg
+          runVcpkgInstall: true
 
       - name: Set up MSVC Developer Command Prompt
         uses: ilammy/msvc-dev-cmd@v1
