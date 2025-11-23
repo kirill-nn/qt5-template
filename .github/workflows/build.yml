@@ -5,7 +5,7 @@ on:
 
 env:
   VCPKG_FEATURE_FLAGS: binarycaching
-  VCPKG_BINARY_SOURCES: "clear;files,%LOCALAPPDATA%\\vcpkg\\archives,readwrite"
+  VCPKG_BINARY_SOURCES: "clear;files,readwrite"
 
 jobs:
   build:
