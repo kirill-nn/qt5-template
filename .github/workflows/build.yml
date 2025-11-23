@@ -5,7 +5,7 @@ on:
 
 env:
   VCPKG_FEATURE_FLAGS: binarycaching
-  VCPKG_BINARY_SOURCES: "clear;files,readwrite"
+  VCPKG_BINARY_SOURCES: "clear;files,C:\\Users\\runneradmin\\AppData\\Local\\vcpkg\\archives,readwrite"
 
 jobs:
   build:
@@ -19,7 +19,6 @@ jobs:
           submodules: recursive
 
       - name: Cache vcpkg dependencies
-        id: cache
         uses: actions/cache@v4
         with:
           path: |
@@ -34,10 +33,9 @@ jobs:
            vcpkg-${{ runner.os }}-${{ runner.arch }}-
 
       - name: Cache vcpkg archives
-        if: steps.cache.outputs.cache-hit != 'true'
         uses: actions/cache@v4
         with:
-          path: ~\\AppData\\Local\\vcpkg\\archives
+          path: C:/Users/runneradmin/AppData/Local/vcpkg/archives
           key: vcpkg-archives-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('vcpkg.json', '.git/modules/misc/vcpkg/HEAD') }}
           restore-keys: |
             vcpkg-archives-${{ runner.os }}-${{ runner.arch }}-
