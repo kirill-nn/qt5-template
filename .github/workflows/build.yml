@@ -7,6 +7,9 @@ jobs:
   build:
     name: Build for Windows x64 MSVC
     runs-on: windows-latest
+    env:
+      VCPKG_DEFAULT_TRIPLET: x64-windows-static-md
+      VCPKG_DEFAULT_HOST_TRIPLET: x64-windows-static-md
 
     steps:
       - name: Checkout with submodules
@@ -19,7 +22,6 @@ jobs:
         with:
           vcpkgDirectory: ${{ github.workspace }}/misc/vcpkg
           runVcpkgInstall: true
-          vcpkgTriplet: x64-windows-static-md
 
       - name: Set up MSVC Developer Command Prompt
         uses: ilammy/msvc-dev-cmd@v1
