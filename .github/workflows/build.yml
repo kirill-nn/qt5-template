@@ -19,6 +19,7 @@ jobs:
         with:
           vcpkgDirectory: ${{ github.workspace }}/misc/vcpkg
           runVcpkgInstall: true
+          vcpkgTriplet: x64-windows-static-md
 
       - name: Set up MSVC Developer Command Prompt
         uses: ilammy/msvc-dev-cmd@v1
